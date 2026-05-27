@@ -1,13 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CinesFamily — Catálogo de Filmes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    
+
+  <!--Background Grain Overlay-->
+  <div class="grain"></div>
+
+  <header class="header">
+    <div class="header__inner">
+      <div class="logo">
+        <span class="logo__icon">🎥</span>
+        <span class="logo__text">CinesFamily</span>
+      </div>
+
+      <div class="search-bar">
+        <input
+          type="text"
+          id="search"
+          placeholder="Buscar filme..."
+          autocomplete="off"
+        />
+        <button id="btnSearch" aria-label="Buscar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="filter-tabs" role="tablist">
+        <button class="tab active" data-endpoint="popular" role="tab">Populares</button>
+        <button class="tab" data-endpoint="top_rated" role="tab">Mais Votados</button>
+        <button class="tab" data-endpoint="now_playing" role="tab">Em Cartaz</button>
+        <button class="tab" data-endpoint="upcoming" role="tab">Em Breve</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="page-title">
+      <h1 id="section-title">Populares</h1>
+      <p id="message" class="message" aria-live="polite"></p>
+    </div>
+
+    <div id="movie-list" class="movie-list" role="list"></div>
+  </main>
+
+  <footer class="footer">
+    <p>Dados fornecidos por <a href="https://www.themoviedb.org" target="_blank" rel="noopener">The Movie Database</a></p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
